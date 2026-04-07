@@ -1,0 +1,106 @@
+{
+  "tipologias_modelos": [
+    {
+      "titulo": "Política industrial explícita con ecosistema de innovación",
+      "descripcion": "Se ubica a Buen Gobierno, Libertad Popular, Somos Perú, Fuerza y Libertad y, en menor medida, Perú Primero. Comparten cinco rasgos: instrumentos identificables, articulación empresa-academia-Estado, territorialización, metas cuantificables y alguna forma de gobernanza CTI.",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú", "Fuerza y Libertad", "Perú Primero"],
+      "detalle": "Comparten cinco rasgos: instrumentos identificables, articulación empresa-academia-Estado, territorialización, metas cuantificables y alguna forma de gobernanza CTI."
+    },
+    {
+      "titulo": "Innovación subordinada a competitividad o mercado",
+      "descripcion": "Avanza País, APP, SíCreo, Podemos Perú, PROGRESEMOS y País para Todos tratan la innovación como palanca de productividad, digitalización o emprendimiento, pero con menos densidad institucional que el grupo anterior.",
+      "lista": ["Avanza País", "APP", "SíCreo", "Podemos Perú", "PROGRESEMOS", "País para Todos"],
+      "detalle": "Tratan la innovación como palanca de productividad, digitalización o emprendimiento, pero con menos densidad institucional que el grupo anterior."
+    },
+    {
+      "titulo": "Industrialización soberanista o productivismo político",
+      "descripcion": "Venceremos, Perú Libre, Juntos por el Perú y Unido Perú privilegian la industrialización, la recuperación de recursos estratégicos o la transformación productiva, pero en la evidencia recuperada muestran menor sofisticación en CTI, transferencia y financiamiento de innovación.",
+      "lista": ["Venceremos", "Perú Libre", "Juntos por el Perú", "Unido Perú"],
+      "detalle": "Privilegian la industrialización, la recuperación de recursos estratégicos o la transformación productiva, pero en la evidencia recuperada muestran menor sofisticación en CTI, transferencia y financiamiento de innovación."
+    },
+    {
+      "titulo": "Innovación declarativa sin instrumentos suficientes",
+      "descripcion": "PRIN, Perú Moderno, Partido Patriótico del Perú, Salvemos al Perú (menos por ambición y más por falta de detalle territorial), Renovación Popular, Unidad Nacional y otros planes del bloque bajo-medio usan el lenguaje de modernización, tecnología o industrialización, pero con menor trazabilidad instrumental.",
+      "lista": ["PRIN", "Perú Moderno", "Partido Patriótico del Perú", "Salvemos al Perú", "Renovación Popular", "Unidad Nacional"],
+      "detalle": "Usan el lenguaje de modernización, tecnología o industrialización, pero con menor trazabilidad instrumental."
+    }
+  ],
+  "ranking_analitico": {
+    "por_solidez_tecnica": {
+      "titulo": "Por solidez técnica",
+      "lista": [
+        "Buen Gobierno",
+        "Libertad Popular",
+        "Somos Perú",
+        "Fuerza y Libertad",
+        "Perú Primero",
+        "Fuerza Popular",
+        "Salvemos al Perú",
+        "País para Todos",
+        "Podemos Perú",
+        "Avanza País"
+      ]
+    },
+    "por_claridad_instrumentos": {
+      "titulo": "Por claridad de instrumentos",
+      "descripcion": "Los más claros son Buen Gobierno, Libertad Popular, Somos Perú, Fuerza y Libertad y Perú Primero.",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú", "Fuerza y Libertad", "Perú Primero"],
+      "detalle": "Destacan por claridad explicita en la mención de sus instrumentos vinculados a innovación."
+    },
+    "por_viabilidad": {
+      "titulo": "Por viabilidad de implementación",
+      "viables": "Los más viables, por apoyarse en instrumentos ya existentes o fácilmente adaptables, son Perú Primero, Buen Gobierno, Podemos Perú, País para Todos y Libertad Popular.",
+      "menos_viables": "Los menos viables son aquellos con alta ambición política pero baja especificación operativa o fuerte dependencia de reforma constitucional/estructural previa. Por dependencia de reforma estructural/constitucional previa Venceremos Perú Libre Unido Perú Por alta ambición con baja especificación operativa 4. Un Camino Diferente        5. PRIN        6. Partido Patriótico del Perú        7. Juntos por el Perú en este eje específico y con la evidencia recuperada aquí. Vacíos estructurales comunes",
+      "mas_viables_lista": ["Perú Primero", "Buen Gobierno", "Podemos Perú", "País para Todos", "Libertad Popular"],
+      "mas_viables_detalle": "Destacan por apoyarse en instrumentos ya existentes en el Estado peruano o fácilmente adaptables, garantizando viabilidad operativa e institucional mínima.",
+      "menos_viables_lista": ["Venceremos", "Perú Libre", "Unido Perú", "Un Camino Diferente", "PRIN", "Partido Patriótico del Perú", "Juntos por el Perú"],
+      "menos_viables_detalle": "Destacan por tener una alta dependencia de reforma constitucional/estructural previa o alta ambición con baja especificación operativa."
+    }
+  },
+  "vacios_estructurales_comunes": [
+    {
+      "titulo": "Financiamiento incompleto",
+      "descripcion": "Muchos planes hablan de innovación, pero pocos identifican cuánto, cómo y desde qué instrumento se financiará la CTI. Los casos más claros son Buen Gobierno, Libertad Popular, Somos Perú y Salvemos al Perú."
+    },
+    {
+      "titulo": "Débil articulación universidad-empresa",
+      "descripcion": "Salvo en Libertad Popular, Fuerza y Libertad, Buen Gobierno, Perú Primero y Salvemos al Perú, el vínculo entre academia y aparato productivo aparece débil o solo enunciado."
+    },
+    {
+      "titulo": "Centralismo persistente",
+      "descripcion": "Muchos planes reconocen la brecha territorial, pero pocos construyen una verdadera arquitectura regional de innovación. Los más avanzados aquí son Fuerza y Libertad, Buen Gobierno, Libertad Popular, País para Todos e Integridad Democrática."
+    },
+    {
+      "titulo": "Gobernanza CTI insuficiente",
+      "descripcion": "La mayoría no aclara quién coordina la política de innovación, cómo se alinea con PRODUCE, CONCYTEC, ITP-CITE, regiones y sector privado, ni cómo se evalúan resultados."
+    }
+  ],
+  "evaluacion_general": [
+    {
+      "criterio": "Claridad conceptual",
+      "descripcion": "Los más claros son Buen Gobierno, Libertad Popular y Somos Perú, porque distinguen productividad, industrialización, innovación y transferencia tecnológica como componentes diferentes pero articulados."
+    },
+    {
+      "criterio": "Nivel de detalle técnico",
+      "descripcion": "Vuelven a destacar Buen Gobierno, Fuerza y Libertad, Libertad Popular y Somos Perú por incluir metas, instituciones y acciones medibles."
+    },
+    {
+      "criterio": "Instrumentos concretos",
+      "descripcion": "Los más densos son: parques industriales, CITE, fondos concursables, incentivos fiscales, capital semilla, joint ventures, formación dual, cofinanciamiento I+D, clústeres y nodos regionales. Esto aparece con mayor fuerza en Buen Gobierno, Libertad Popular, Somos Perú, Perú Primero y Fuerza y Libertad."
+    },
+    {
+      "criterio": "Viabilidad política y económica",
+      "descripcion": "Los planes más viables son los que se apoyan en instrumentos escalables ya existentes en el Estado peruano —CITE, PROINNOVATE, incentivos tributarios, fondos concursables, compras públicas, formación técnica— en lugar de depender solo de grandes reformas constitucionales."
+    },
+    {
+      "criterio": "Alineamiento con literatura de desarrollo",
+      "descripcion": "Los mejores alineados con enfoques tipo CEPAL/transformación productiva, Hausmann/especialización y complejidad, y Mazzucato/Estado emprendedor orientador son Buen Gobierno, Libertad Popular, Somos Perú y Fuerza y Libertad. Esto se observa en su atención a complejidad, misión productiva, coordinación público-privada y aprendizaje tecnológico."
+    }
+  ],
+  "conclusion": [
+    "La comparación de los planes disponibles muestra tres hallazgos centrales:",
+    "Primero, la mayoría de planes ya reconoce que el problema peruano no es solo crecer, sino transformar productivamente la estructura económica; sin embargo, solo una minoría logra traducir esa intuición en política pública sofisticada.",
+    "Segundo, los planes más sólidos no son los que más repiten la palabra “innovación”, sino los que conectan innovación con industria, territorio, financiamiento e instituciones. En esta sesión, los mejor posicionados son Buen Gobierno, Libertad Popular, Somos Perú, Fuerza y Libertad y Perú Primero.",
+    "Tercero, el vacío dominante del sistema político peruano sigue siendo la débil gobernanza de la innovación: falta claridad sobre quién lidera, cómo se coordina, cómo se territorializa y cómo se financia la transformación productiva. Allí está la principal frontera entre planes declarativos y planes programáticamente maduros."
+  ]
+}

@@ -1,0 +1,79 @@
+/* Comparator specific layout */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.compare-section {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+}
+
+.compare-section-title {
+  margin-bottom: 1.5rem;
+  color: var(--text-strong);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.compare-col {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.compare-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.compare-select:focus {
+  border-color: var(--color-accent);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-strong);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background-color: var(--color-bg-light);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.comparative-insights-card {
+  background-color: var(--tier-high-bg);
+  border-left: 4px solid var(--color-accent);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  margin-top: 3rem;
+}
