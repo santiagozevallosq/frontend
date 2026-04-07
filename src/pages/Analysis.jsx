@@ -31,31 +31,6 @@ export default function Analysis() {
     <AlertTriangle size={24} style={{ color: 'var(--color-accent)' }} />
   ];
 
-  // Helper to extract party names into inline badges
-  const renderTipologiaDescription = (text) => {
-    const partiesList = [
-      "Buen Gobierno", "Libertad Popular", "Somos Perú", "Fuerza y Libertad", "Perú Primero",
-      "Avanza País", "APP", "SíCreo", "Podemos Perú", "PROGRESEMOS", "País para Todos",
-      "Venceremos", "Perú Libre", "Juntos por el Perú", "Unido Perú",
-      "PRIN", "Perú Moderno", "Partido Patriótico del Perú", "Salvemos al Perú", "Renovación Popular", "Unidad Nacional"
-    ];
-    
-    // Split by parties but keep the party name in the parts array
-    let parts = text.split(new RegExp(`(${partiesList.join('|')})`, 'g'));
-    
-    return (
-      <p style={{ margin: 0, color: 'var(--text-color)', fontFamily: 'var(--font-serif)', lineHeight: 1.7 }}>
-        {parts.map((part, i) => 
-          partiesList.includes(part) ? (
-            <span key={i} className="inline-badge">{part}</span>
-          ) : (
-            <span key={i}>{part}</span>
-          )
-        )}
-      </p>
-    );
-  };
-
   return (
     <div className="container" style={{ maxWidth: '1000px' }}>
       {/* Header */}
@@ -78,53 +53,95 @@ export default function Analysis() {
         </div>
       </div>
 
-      {/* 2. Ranking Analítico (Leaderboard) */}
-      <SectionCard title="Ranking por Solidez Técnica" className="mb-8 animate-fade-in-up delay-200" icon={<Trophy size={22} />}>
-        <div style={{ marginBottom: '1.5rem', paddingTop: '1rem' }}>
-          <p className="text-muted" style={{ margin: 0, fontWeight: 500 }}>
-            {analisisData.ranking_analitico.por_solidez_tecnica.titulo}
-          </p>
-        </div>
-        
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2.5rem' }}>
-          {analisisData.ranking_analitico.por_solidez_tecnica.lista.map((item, idx) => {
-            // Mock score calculation to show descending bars
-            const score = Math.max(30, 95 - (idx * 6));
-            const rankClass = idx < 3 ? `rank-${idx + 1}` : '';
-            return (
-              <div key={idx} className="leaderboard-row">
-                <div className={`leaderboard-rank ${rankClass}`}>
-                  {idx + 1}
-                </div>
-                <div className="leaderboard-party">
-                  {item}
-                </div>
-                <div className="leaderboard-bar-wrapper">
-                  <div 
-                    className="leaderboard-bar" 
-                    style={{ width: mounted ? `${score}%` : '0%' }}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      {/* 2. Ranking Analítico (Leaderboard Completo) */}
+      <SectionCard title="Estudio de Solidez y Viabilidad" className="mb-8 animate-fade-in-up delay-200" icon={<Trophy size={22} />}>
+        <div className="analysis-grid-2" style={{ paddingTop: '1rem' }}>
+          
+          {/* Left Column: Solidez Técnica */}
+          <div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ margin: '0 0 0.5rem 0', color: 'var(--text-strong)' }}>
+                Ranking {analisisData.ranking_analitico.por_solidez_tecnica.titulo}
+              </h4>
+              <p className="text-muted" style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '0.9rem' }}>
+                Partidos evaluados de acuerdo a la densidad institucional y metas expuestas en sus documentos oficiales.
+              </p>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              {analisisData.ranking_analitico.por_solidez_tecnica.lista.map((item, idx) => {
+                // Mock score calculation to show descending bars
+                const score = Math.max(30, 95 - (idx * 6));
+                const rankClass = idx < 3 ? `rank-${idx + 1}` : '';
+                return (
+                  <div key={idx} className="leaderboard-row" style={{ padding: '0.4rem 0' }}>
+                    <div className={`leaderboard-rank ${rankClass}`} style={{ width: '28px', height: '28px', fontSize: '0.8rem' }}>
+                      {idx + 1}
+                    </div>
+                    <div className="leaderboard-party" style={{ width: '130px', fontSize: '0.9rem' }}>
+                      {item}
+                    </div>
+                    <div className="leaderboard-bar-wrapper" style={{ height: '8px' }}>
+                      <div 
+                        className="leaderboard-bar" 
+                        style={{ width: mounted ? `${score}%` : '0%' }}
+                      ></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-        <div className="analysis-grid-2">
-           <AnalysisBlock 
-              title="Planes más viables"
-              description={analisisData.ranking_analitico.por_viabilidad.viables}
-              variant="highlighted"
-            />
-            <AnalysisBlock 
-              title="Planes menos viables"
-              description={analisisData.ranking_analitico.por_viabilidad.menos_viables}
-            />
+          {/* Right Column: Viabilidad */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+             {/* Más Viables */}
+             <div>
+               <h5 style={{ marginBottom: '0.5rem', color: '#16a34a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                 <CheckCircle2 size={16} /> Planes Más Viables
+               </h5>
+               <p className="text-muted" style={{ marginBottom: '1rem', fontSize: '0.9rem', fontFamily: 'var(--font-serif)' }}>
+                 {analisisData.ranking_analitico.por_viabilidad.mas_viables_detalle}
+               </p>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                {analisisData.ranking_analitico.por_viabilidad.mas_viables_lista.map((item, idx) => (
+                  <div key={idx} className="leaderboard-row" style={{ padding: '0.4rem 0', borderBottomColor: 'rgba(22, 163, 74, 0.1)' }}>
+                    <div className="leaderboard-rank" style={{ width: '24px', height: '24px', fontSize: '0.75rem', backgroundColor: '#dcfce7', color: '#166534' }}>{idx + 1}</div>
+                    <div className="leaderboard-party" style={{ width: '130px', fontSize: '0.9rem' }}>{item}</div>
+                    <div className="leaderboard-bar-wrapper" style={{ height: '6px' }}>
+                      <div className="leaderboard-bar" style={{ width: mounted ? `${100 - (idx * 8)}%` : '0%', backgroundColor: '#22c55e' }}></div>
+                    </div>
+                  </div>
+                ))}
+               </div>
+             </div>
+
+             {/* Menos Viables */}
+             <div>
+               <h5 style={{ marginBottom: '0.5rem', color: '#dc2626', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                 <AlertTriangle size={16} /> Planes Menos Viables
+               </h5>
+               <p className="text-muted" style={{ marginBottom: '1rem', fontSize: '0.9rem', fontFamily: 'var(--font-serif)' }}>
+                 {analisisData.ranking_analitico.por_viabilidad.menos_viables_detalle}
+               </p>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                {analisisData.ranking_analitico.por_viabilidad.menos_viables_lista.map((item, idx) => (
+                  <div key={idx} className="leaderboard-row" style={{ padding: '0.4rem 0', borderBottomColor: 'rgba(220, 38, 38, 0.1)' }}>
+                    <div className="leaderboard-rank" style={{ width: '24px', height: '24px', fontSize: '0.75rem', backgroundColor: '#fee2e2', color: '#991b1b' }}>{idx + 1}</div>
+                    <div className="leaderboard-party" style={{ width: '130px', fontSize: '0.9rem' }}>{item}</div>
+                    <div className="leaderboard-bar-wrapper" style={{ height: '6px' }}>
+                      <div className="leaderboard-bar inverse" style={{ width: mounted ? `${100 - (idx * 6)}%` : '0%' }}></div>
+                    </div>
+                  </div>
+                ))}
+               </div>
+             </div>
+          </div>
         </div>
       </SectionCard>
 
-      {/* 3. Tipologías */}
-      <SectionCard title="Tipología de Modelos" className="mb-8 animate-fade-in-up delay-300" icon={<TrendingUp size={22} />}>
+      {/* 3. Tipologías (Ranking format) */}
+      <SectionCard title="Ranking Categórico por Tipología" className="mb-8 animate-fade-in-up delay-300" icon={<TrendingUp size={22} />}>
         <div className="analysis-grid-2" style={{ paddingTop: '1rem' }}>
           {analisisData.tipologias_modelos.map((tipologia, idx) => (
             <div key={idx} className="analysis-block tipologia-card" style={{
@@ -134,29 +151,53 @@ export default function Analysis() {
               border: '1px solid var(--border-color)',
               borderLeft: '4px solid var(--color-accent)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
                 {tipologiaIcons[idx % tipologiaIcons.length]}
                 <h4 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-strong)', lineHeight: 1.2 }}>
                   {tipologia.titulo}
                 </h4>
               </div>
-              {renderTipologiaDescription(tipologia.descripcion)}
+              <p className="text-muted" style={{ marginBottom: '1.25rem', fontFamily: 'var(--font-serif)', fontSize: '0.95rem' }}>
+                {tipologia.detalle}
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', backgroundColor: 'var(--color-bg)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+                {tipologia.lista.map((item, i) => (
+                  <div key={i} className="leaderboard-row" style={{ padding: '0.3rem 0', borderBottom: i === tipologia.lista.length - 1 ? 'none' : '1px solid var(--border-color)' }}>
+                    <div className="leaderboard-rank" style={{ width: '24px', height: '24px', fontSize: '0.75rem', backgroundColor: 'var(--surface-color)', border: '1px solid var(--border-color)' }}>{i + 1}</div>
+                    <div className="leaderboard-party" style={{ opacity: 0.9 }}>{item}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </SectionCard>
 
-      {/* 4. Vacíos Estructurales (Alert Cards) */}
-      <SectionCard title="Vacíos Estructurales Comunes" className="mb-8 animate-fade-in-up delay-400" icon={<AlertTriangle size={22} style={{ color: '#d97706' }} />}>
-        <div style={{ paddingTop: '1rem' }}>
+      {/* 4. Vacíos Estructurales (Alert Ranking) */}
+      <SectionCard title="Top Vacíos Estructurales Más Comunes" className="mb-8 animate-fade-in-up delay-400" icon={<AlertTriangle size={22} style={{ color: '#d97706' }} />}>
+        <div className="analysis-grid-2" style={{ paddingTop: '1rem' }}>
           {analisisData.vacios_estructurales_comunes.map((vacio, idx) => (
-             <div key={idx} className="analysis-alert">
-               <div className="alert-icon">
-                 <AlertTriangle size={24} />
+             <div key={idx} className="analysis-alert" style={{ alignItems: 'flex-start', marginBottom: 0, padding: '1.25rem' }}>
+               <div className="leaderboard-rank" style={{ flexShrink: 0, backgroundColor: '#fef3c7', color: '#b45309', border: '1px solid #fde68a', fontWeight: 800 }}>
+                 #{idx + 1}
                </div>
-               <div className="alert-content">
-                 <h4>{vacio.titulo}</h4>
-                 <p>{vacio.descripcion}</p>
+               <div className="alert-content" style={{ width: '100%' }}>
+                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                   {vacio.titulo} <AlertTriangle size={14} style={{opacity: 0.5}} />
+                 </h4>
+                 <p style={{ fontSize: '0.9rem', marginBottom: vacio.lista && vacio.lista.length > 0 ? '1rem' : '0' }}>{vacio.detalle}</p>
+                 
+                 {vacio.lista && vacio.lista.length > 0 && (
+                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', backgroundColor: 'rgba(255,255,255,0.6)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                     {vacio.lista.map((item, i) => (
+                       <div key={i} className="leaderboard-row" style={{ padding: '0.2rem 0', borderBottom: i === vacio.lista.length - 1 ? 'none' : '1px solid rgba(0,0,0,0.05)' }}>
+                         <div className="leaderboard-rank" style={{ width: '20px', height: '20px', fontSize: '0.7rem', backgroundColor: 'transparent', border: '1px solid rgba(0,0,0,0.1)' }}>{i + 1}</div>
+                         <div className="leaderboard-party" style={{ fontSize: '0.85rem' }}>{item}</div>
+                       </div>
+                     ))}
+                   </div>
+                 )}
                </div>
              </div>
           ))}
@@ -165,14 +206,34 @@ export default function Analysis() {
 
       {/* 5. Evaluación General */}
       <div className="mb-8 animate-fade-in-up delay-400">
-        <h3 className="mb-4" style={{ paddingLeft: '1rem' }}>Evaluación General</h3>
+        <h3 className="mb-4" style={{ paddingLeft: '1rem' }}>Ranking por Evaluación General (Casos Destacados)</h3>
         <div className="analysis-grid-2">
           {analisisData.evaluacion_general.map((evalItem, idx) => (
-            <AnalysisBlock 
-              key={idx}
-              title={evalItem.criterio}
-              description={evalItem.descripcion}
-            />
+            <div key={idx} className="analysis-block tipologia-card" style={{
+              padding: '1.5rem',
+              borderRadius: 'var(--radius-md)',
+              backgroundColor: 'var(--surface-color)',
+              border: '1px solid var(--border-color)',
+              borderLeft: '4px solid var(--color-primary)'
+            }}>
+              <div style={{ marginBottom: '0.75rem' }}>
+                <h4 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-strong)', lineHeight: 1.2 }}>
+                   {evalItem.titulo}
+                </h4>
+              </div>
+              <p className="text-muted" style={{ marginBottom: '1.25rem', fontFamily: 'var(--font-serif)', fontSize: '0.95rem' }}>
+                {evalItem.detalle}
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', backgroundColor: 'var(--color-bg)', padding: '1rem', borderRadius: 'var(--radius-sm)' }}>
+                {evalItem.lista.map((item, i) => (
+                  <div key={i} className="leaderboard-row" style={{ padding: '0.3rem 0', borderBottom: i === evalItem.lista.length - 1 ? 'none' : '1px solid var(--border-color)' }}>
+                    <div className="leaderboard-rank" style={{ width: '24px', height: '24px', fontSize: '0.75rem', backgroundColor: 'var(--surface-color)', border: '1px solid var(--border-color)' }}>{i + 1}</div>
+                    <div className="leaderboard-party" style={{ opacity: 0.9 }}>{item}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

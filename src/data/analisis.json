@@ -60,41 +60,50 @@
   "vacios_estructurales_comunes": [
     {
       "titulo": "Financiamiento incompleto",
-      "descripcion": "Muchos planes hablan de innovación, pero pocos identifican cuánto, cómo y desde qué instrumento se financiará la CTI. Los casos más claros son Buen Gobierno, Libertad Popular, Somos Perú y Salvemos al Perú."
+      "detalle": "Muchos planes hablan de innovación, pero pocos identifican cuánto, cómo y desde qué instrumento se financiará la CTI. Los casos más claros que evitan este vacío son:",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú", "Salvemos al Perú"]
     },
     {
       "titulo": "Débil articulación universidad-empresa",
-      "descripcion": "Salvo en Libertad Popular, Fuerza y Libertad, Buen Gobierno, Perú Primero y Salvemos al Perú, el vínculo entre academia y aparato productivo aparece débil o solo enunciado."
+      "detalle": "El vínculo entre academia y aparato productivo aparece muy débil o solo enunciado general, salvo en los siguientes planes destacados:",
+      "lista": ["Libertad Popular", "Fuerza y Libertad", "Buen Gobierno", "Perú Primero", "Salvemos al Perú"]
     },
     {
       "titulo": "Centralismo persistente",
-      "descripcion": "Muchos planes reconocen la brecha territorial, pero pocos construyen una verdadera arquitectura regional de innovación. Los más avanzados aquí son Fuerza y Libertad, Buen Gobierno, Libertad Popular, País para Todos e Integridad Democrática."
+      "detalle": "Aunque muchos reconocen la brecha territorial, pocos construyen una verdadera arquitectura regional. Los más avanzados aquí son:",
+      "lista": ["Fuerza y Libertad", "Buen Gobierno", "Libertad Popular", "País para Todos", "Integridad Democrática"]
     },
     {
       "titulo": "Gobernanza CTI insuficiente",
-      "descripcion": "La mayoría no aclara quién coordina la política de innovación, cómo se alinea con PRODUCE, CONCYTEC, ITP-CITE, regiones y sector privado, ni cómo se evalúan resultados."
+      "detalle": "La inmensa mayoría no aclara quién coordina la política de innovación, cómo se alinea con PRODUCE, CONCYTEC o regiones, ni cómo se evalúan resultados.",
+      "lista": []
     }
   ],
   "evaluacion_general": [
     {
-      "criterio": "Claridad conceptual",
-      "descripcion": "Los más claros son Buen Gobierno, Libertad Popular y Somos Perú, porque distinguen productividad, industrialización, innovación y transferencia tecnológica como componentes diferentes pero articulados."
+      "titulo": "Claridad conceptual",
+      "detalle": "Distinguen productividad, industrialización, innovación y transferencia tecnológica como componentes diferentes pero articulados.",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú"]
     },
     {
-      "criterio": "Nivel de detalle técnico",
-      "descripcion": "Vuelven a destacar Buen Gobierno, Fuerza y Libertad, Libertad Popular y Somos Perú por incluir metas, instituciones y acciones medibles."
+      "titulo": "Nivel de detalle técnico",
+      "detalle": "Destacan por incluir explícitamente metas, instituciones y acciones medibles en sus expedientes.",
+      "lista": ["Buen Gobierno", "Fuerza y Libertad", "Libertad Popular", "Somos Perú"]
     },
     {
-      "criterio": "Instrumentos concretos",
-      "descripcion": "Los más densos son: parques industriales, CITE, fondos concursables, incentivos fiscales, capital semilla, joint ventures, formación dual, cofinanciamiento I+D, clústeres y nodos regionales. Esto aparece con mayor fuerza en Buen Gobierno, Libertad Popular, Somos Perú, Perú Primero y Fuerza y Libertad."
+      "titulo": "Instrumentos concretos",
+      "detalle": "Su densidad instrumental menciona directamente: parques industriales, fondos concursables, clústeres, CITE o incentivos fiscales.",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú", "Perú Primero", "Fuerza y Libertad"]
     },
     {
-      "criterio": "Viabilidad política y económica",
-      "descripcion": "Los planes más viables son los que se apoyan en instrumentos escalables ya existentes en el Estado peruano —CITE, PROINNOVATE, incentivos tributarios, fondos concursables, compras públicas, formación técnica— en lugar de depender solo de grandes reformas constitucionales."
+      "titulo": "Viabilidad política y económica",
+      "detalle": "Se apoyan en instrumentos escalables ya existentes en el Estado peruano en lugar de depender solo de grandes reformas constitucionales.",
+      "lista": ["Perú Primero", "Buen Gobierno", "Podemos Perú", "País para Todos", "Libertad Popular"]
     },
     {
-      "criterio": "Alineamiento con literatura de desarrollo",
-      "descripcion": "Los mejores alineados con enfoques tipo CEPAL/transformación productiva, Hausmann/especialización y complejidad, y Mazzucato/Estado emprendedor orientador son Buen Gobierno, Libertad Popular, Somos Perú y Fuerza y Libertad. Esto se observa en su atención a complejidad, misión productiva, coordinación público-privada y aprendizaje tecnológico."
+      "titulo": "Alineamiento con literatura técnica",
+      "detalle": "Alineados con enfoques tipo CEPAL / transformación productiva y complejidad. Orientados a misión productiva y coordinación público-privada.",
+      "lista": ["Buen Gobierno", "Libertad Popular", "Somos Perú", "Fuerza y Libertad"]
     }
   ],
   "conclusion": [
