@@ -30,6 +30,63 @@ export default function Home() {
         </p>
       </div>
 
+      {/* Legend */}
+      <div style={{
+        backgroundColor: 'var(--surface-color)',
+        padding: '1.5rem',
+        borderRadius: 'var(--radius-lg)',
+        border: '1px solid var(--border-color)',
+        marginBottom: '3rem',
+        maxWidth: '800px',
+        margin: '0 auto 3rem auto',
+        boxShadow: 'var(--shadow-sm)'
+      }}>
+        <h3 style={{ fontSize: '1rem', color: 'var(--text-strong)', marginBottom: '1rem' }}>
+          Nivel de desarrollo programático:
+        </h3>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+            <span style={{ 
+              backgroundColor: 'var(--tier-high-bg)', 
+              color: 'var(--tier-high-text)', 
+              padding: '0.2rem 0.6rem', 
+              borderRadius: '9999px', 
+              fontWeight: 600, 
+              fontSize: '0.8rem',
+              minWidth: '65px',
+              textAlign: 'center'
+            }}>Alto</span>
+            <span style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>define instrumentos, institucionalidad y metas verificables.</span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+            <span style={{ 
+              backgroundColor: 'var(--tier-medium-bg)', 
+              color: 'var(--tier-medium-text)', 
+              padding: '0.2rem 0.6rem', 
+              borderRadius: '9999px', 
+              fontWeight: 600, 
+              fontSize: '0.8rem',
+              minWidth: '65px',
+              textAlign: 'center'
+            }}>Medio</span>
+            <span style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>reconoce el problema y plantea líneas de acción, pero con baja precisión operativa.</span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+            <span style={{ 
+              backgroundColor: 'var(--tier-low-bg)', 
+              color: 'var(--tier-low-text)', 
+              padding: '0.2rem 0.6rem', 
+              borderRadius: '9999px', 
+              fontWeight: 600, 
+              fontSize: '0.8rem',
+              minWidth: '65px',
+              textAlign: 'center'
+            }}>Bajo</span>
+            <span style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>solo mención declarativa o vínculo indirecto con innovación/industrialización.</span>
+          </li>
+        </ul>
+      </div>
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem' }}>Fichas Analíticas ({filteredPlanes.length})</h2>
         <div style={{ position: 'relative', width: '300px' }}>
