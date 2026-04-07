@@ -27,11 +27,11 @@ export default function ComparisonSummary({ planA, planB }) {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-              <span className="text-muted">Instrumentos claros:</span>
+              <span className="text-muted">Instrumentos propuestos:</span>
               <span style={{ fontWeight: 500 }}>{isExplicitlyStated(planA.instrumentos) ? 'Sí' : 'No evidente'}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-              <span className="text-muted">Financiamiento:</span>
+              <span className="text-muted">Financiamiento / Metas:</span>
               <span style={{ fontWeight: 500 }}>{isExplicitlyStated(planA.financiamiento_metas) ? 'Mencionado' : 'No evidente'}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -53,11 +53,11 @@ export default function ComparisonSummary({ planA, planB }) {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-              <span className="text-muted">Instrumentos claros:</span>
+              <span className="text-muted">Instrumentos propuestos:</span>
               <span style={{ fontWeight: 500 }}>{isExplicitlyStated(planB.instrumentos) ? 'Sí' : 'No evidente'}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-              <span className="text-muted">Financiamiento:</span>
+              <span className="text-muted">Financiamiento / Metas:</span>
               <span style={{ fontWeight: 500 }}>{isExplicitlyStated(planB.financiamiento_metas) ? 'Mencionado' : 'No evidente'}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
